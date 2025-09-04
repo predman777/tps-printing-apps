@@ -159,41 +159,43 @@ export default function Roadmap() {
               Building a comprehensive estimating system to streamline print workflows, quotes, and approvals.
               Track our progress and upcoming features across all development phases.
             </p>
+            
+            {/* Compact Progress Bar */}
+            <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto border border-[--brand-dark-blue]">
+              <div className="space-y-3">
+                {/* Phase 1 Progress */}
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1: Discovery & Planning</span>
+                    <span className="text-sm font-semibold text-[--brand-orange]">4/5 (80%)</span>
+                  </div>
+                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-1.5">
+                    <div className="bg-[--brand-orange] h-1.5 rounded-full transition-all duration-500" style={{width: '80%'}}></div>
+                  </div>
+                </div>
+                
+                {/* Overall Progress */}
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm font-semibold text-[--brand-indigo]">Overall Project Progress</span>
+                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1/7 (14%)</span>
+                  </div>
+                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-1.5">
+                    <div className="bg-gradient-to-r from-[--brand-gold] to-[--brand-indigo] h-1.5 rounded-full transition-all duration-500" style={{width: '14%'}}></div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-neutral-600 mt-2">Currently finishing Phase 1 - one task remaining</p>
+            </div>
           </div>
         </div>
+
       </section>
 
       {/* Main Content */}
       <section className="bg-white border-y border-[--brand-dark-blue]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="max-w-4xl mx-auto">
-            {/* Progress Bar */}
-            <div className="mb-8 bg-[--brand-pale-gold] rounded-xl p-6">
-              <div className="space-y-4">
-                {/* Phase 1 Progress */}
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1: Discovery & Planning</span>
-                    <span className="text-sm font-semibold text-[--brand-orange]">4 of 5 tasks (80%)</span>
-                  </div>
-                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-2">
-                    <div className="bg-[--brand-orange] h-2 rounded-full transition-all duration-500" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-                
-                {/* Overall Progress */}
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Overall Project Progress</span>
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1 of 7 (14%)</span>
-                  </div>
-                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-2">
-                    <div className="bg-gradient-to-r from-[--brand-gold] to-[--brand-indigo] h-2 rounded-full transition-all duration-500" style={{width: '14%'}}></div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs text-neutral-600 mt-2">Currently finishing Phase 1 - one task remaining</p>
-            </div>
 
             {/* Phase Cards */}
             <div className="space-y-6">
