@@ -13,28 +13,28 @@ const ESTIMATE_APPS = [
     name: "Roll Label Pricing",
     description: "Specialized pricing tool for roll label products with material and finishing options.",
     href: "https://roll-label.netlify.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Roll+Label+Pricing",
+    image: "/trojan-roll-label-press.jpg",
     status: "active"
   },
   {
     name: "Outsource",
     description: "External vendor pricing and job routing system for specialized print services.",
     href: "#",
-    image: "https://placehold.co/600x400/d7d6dc/40358B?text=Coming+Soon",
+    image: "/outsource-estimator.jpg",
     status: "in-process"
   },
   {
     name: "Estimate Form",
     description: "Comprehensive job specification form with automated pricing integration.",
     href: "#",
-    image: "https://placehold.co/600x400/d7d6dc/40358B?text=Coming+Soon",
+    image: "/estimate.jpg",
     status: "in-process"
   },
   {
     name: "Imposition Calculator",
     description: "Best-card cutting calculator for parent sheets with optimized layout planning and waste reduction.",
     href: "https://tps-printing.my.canva.site/daglaknkdpk",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Imposition+Calculator",
+    image: "/imposition-tool.jpg",
     status: "active"
   }
 ];
@@ -44,63 +44,63 @@ const GENERAL_APPS = [
     name: "Imposition Calculator",
     description: "Best-card cutting calculator for parent sheets with optimized layout planning and waste reduction.",
     href: "https://tps-printing.my.canva.site/daglaknkdpk",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Imposition+Calculator",
+    image: "/imposition-tool.jpg",
     status: "active"
   },
   {
     name: "Colex Imposition",
     description: "Specialized imposition tool for Colex cutting systems with material optimization.",
     href: "https://colex-impo.netlify.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Colex+Imposition",
+    image: "/colex-mimaki.jpg",
     status: "active"
   },
   {
     name: "Summa Imposition",
     description: "Automated imposition layouts for Summa cutting equipment and workflows.",
     href: "https://summa-impo.netlify.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Summa+Imposition",
+    image: "/summa.jpg",
     status: "active"
   },
   {
     name: "Booklet Proofing",
     description: "Interactive proofing system for booklet layouts with client approval workflow.",
     href: "https://tps-printing-booklet-proof-production.up.railway.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Booklet+Proofing",
+    image: "/booklets.jpg",
     status: "active"
   },
   {
     name: "Folding and Flat Template Generator",
     description: "Template creation tool for folding and flat print products with custom dimensions.",
     href: "https://tps-printing-template-generator.netlify.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Template+Generator",
+    image: "/fold-template-generator.jpg",
     status: "active"
   },
   {
     name: "A1 PDF Extract",
     description: "PDF data extraction and processing tool for automated document analysis and content parsing.",
     href: "https://tps-import-pdf-extract.vercel.app/dev-login",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=A1+PDF+Extract",
+    image: "/a1-po-extractor.jpg",
     status: "active"
   },
   {
     name: "Email Signature",
     description: "Corporate email signature generator with brand-consistent templates.",
     href: "https://email-sig-tps.netlify.app/",
-    image: "https://placehold.co/600x400/40358B/F9B729?text=Email+Signature",
+    image: "/email-sig-generator.jpg",
     status: "active"
   },
   {
     name: "PDF Compare",
     description: "Document comparison tool for analyzing differences between PDF files and versions.",
     href: "#",
-    image: "https://placehold.co/600x400/d7d6dc/40358B?text=Coming+Soon",
+    image: "/pdf-compare.jpg",
     status: "in-process"
   },
   {
     name: "Google Analytics",
     description: "Custom analytics dashboard for tracking print job performance and metrics.",
     href: "#",
-    image: "https://placehold.co/600x400/d7d6dc/40358B?text=Coming+Soon",
+    image: "/google-analytics.jpg",
     status: "in-process"
   }
 ];
@@ -353,18 +353,23 @@ export default function TPSAppsHub() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <a
             href="#"
-            className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] rounded-xl group"
+            className="flex items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] rounded-xl group"
           >
-            <div
-              className="h-10 w-10 rounded-xl bg-gradient-to-br from-[--brand-gold] to-[--brand-indigo] shadow-lg transition-all duration-300 group-hover:from-[--brand-indigo] group-hover:to-[--brand-gold] group-hover:scale-105"
-              aria-hidden
+            <img
+              src="/TPS-Printing-Logo-horizontal-black-500x194.png"
+              alt="TPS Printing Logo"
+              className="h-8 transition-all duration-300 group-hover:scale-105"
+              loading="eager"
             />
-            <span
-              className="text-2xl font-extrabold tracking-tight"
-              style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-            >
-              TPS Apps Hub
-            </span>
+            <div className="flex items-center">
+              <span className="text-[--brand-indigo] text-2xl font-light mr-1">|</span>
+              <span
+                className="text-xl font-bold text-[--brand-indigo] tracking-wide"
+                style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
+              >
+                Apps Hub
+              </span>
+            </div>
           </a>
           <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
             <ScrollLink
@@ -416,77 +421,34 @@ export default function TPSAppsHub() {
         />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1
-                className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-[--brand-indigo] drop-shadow-sm"
-                style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-              >
-                Web Apps
-              </h1>
-              <p
-                className="mt-6 text-lg text-neutral-700"
-                style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}
-              >
-                One clean starting point for production tools, prototypes, and
-                future systems—built to reflect our brand, stay accessible, and
-                scale with our workflow.
-              </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <h1
+              className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-[--brand-indigo] drop-shadow-sm"
+              style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
+            >
+              Web Apps
+            </h1>
+            <p
+              className="mt-6 text-lg text-neutral-700 max-w-3xl mx-auto"
+              style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}
+            >
+              Your complete toolkit for print production workflows. From equipment-specific pricing calculators and imposition tools to client proofing systems and document extraction—all unified with consistent branding and seamless integration across TPS operations.
+            </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <ScrollLink
-                  to="#estimate-tools"
-                  className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold shadow-md bg-[--brand-indigo] text-white hover:bg-[--brand-gold] hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--brand-indigo] transition-colors"
-                >
-                  View Pricing Tools
-                </ScrollLink>
-                <ScrollLink
-                  to="#apps"
-                  className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold border border-[--brand-dark-blue] text-neutral-700 hover:border-[--brand-indigo] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] transition-colors"
-                >
-                  Production Tools
-                </ScrollLink>
-              </div>
-
-              <ul className="mt-10 grid grid-cols-2 gap-y-4 gap-x-6 text-sm text-neutral-700">
-                {[
-                  "Brand-consistent colors & typography",
-                  "Keyboard & screen-reader friendly",
-                  "Fast to scan, easy to update",
-                  "Designed for B2B workflows",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <svg
-                      className="h-5 w-5 mt-0.5 text-[--brand-orange]"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <ScrollLink
+                to="#estimate-tools"
+                className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold shadow-md bg-[--brand-indigo] text-white hover:bg-[--brand-gold] hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--brand-indigo] transition-colors"
+              >
+                View Pricing Tools
+              </ScrollLink>
+              <ScrollLink
+                to="#apps"
+                className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold border border-[--brand-dark-blue] text-neutral-700 hover:border-[--brand-indigo] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] transition-colors"
+              >
+                Production Tools
+              </ScrollLink>
             </div>
-
-            <figure className="relative">
-              <div className="aspect-[16/10] w-full overflow-hidden rounded-3xl ring-2 ring-[--brand-dark-blue] shadow-lg">
-                <img
-                  src="https://placehold.co/1200x750/C9D8FA/40358B?text=Apps+Hub+Showcase"
-                  alt="Screenshots collage of TPS internal apps"
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="sr-only">
-                Screenshots of TPS internal apps
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>
@@ -528,12 +490,19 @@ export default function TPSAppsHub() {
                       <img
                         src={app.image}
                         alt={`${app.name} preview`}
-                        className="h-full w-full object-cover"
+                        className={`h-full w-full ${
+                          app.name === "Booklet Proofing" ? "object-contain" : "object-cover"
+                        }`}
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 pointer-events-none" style={{
-                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 0.6), transparent, rgba(249, 183, 41, 0.5))'
+                      <div className="absolute inset-0 pointer-events-none z-20" style={{
+                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 2.0), transparent, rgba(249, 183, 41, 0.5))'
                       }}></div>
+                      <div className="absolute inset-0 flex items-center justify-center z-30">
+                        <div className="bg-[--brand-indigo] text-white px-4 py-2 rounded-lg font-bold text-lg shadow-lg" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
+                          Coming Soon
+                        </div>
+                      </div>
                     </div>
                     <div className="p-6">
                       <h3
@@ -585,11 +554,13 @@ export default function TPSAppsHub() {
                       <img
                         src={app.image}
                         alt={`${app.name} screenshot`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+                          app.name === "Booklet Proofing" ? "object-contain" : "object-cover"
+                        }`}
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 pointer-events-none" style={{
-                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 0.6), transparent, rgba(249, 183, 41, 0.5))'
+                      <div className="absolute inset-0 pointer-events-none z-10" style={{
+                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 0.8), transparent, rgba(249, 183, 41, 0.5))'
                       }}></div>
                     </div>
                     <div className="p-6">
@@ -811,13 +782,23 @@ export default function TPSAppsHub() {
               >
                 {isInProcess ? (
                   <div className="w-full">
-                    <div className="aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-[--brand-pale-gold]">
+                    <div className="aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-[--brand-pale-gold] relative">
                       <img
                         src={app.image}
                         alt={`${app.name} preview`}
-                        className="h-full w-full object-cover"
+                        className={`h-full w-full ${
+                          app.name === "Booklet Proofing" ? "object-contain" : "object-cover"
+                        }`}
                         loading="lazy"
                       />
+                      <div className="absolute inset-0 pointer-events-none z-20" style={{
+                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 0.8), transparent, rgba(249, 183, 41, 0.5))'
+                      }}></div>
+                      <div className="absolute inset-0 flex items-center justify-center z-30">
+                        <div className="bg-[--brand-indigo] text-white px-4 py-2 rounded-lg font-bold text-lg shadow-lg" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
+                          Coming Soon
+                        </div>
+                      </div>
                     </div>
                     <div className="p-6">
                       <h3
@@ -865,13 +846,18 @@ export default function TPSAppsHub() {
                     className="block w-full"
                     aria-label={`Open ${app.name}`}
                   >
-                    <div className="aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-[--brand-pale-gold]">
+                    <div className="aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-[--brand-pale-gold] relative">
                       <img
                         src={app.image}
                         alt={`${app.name} screenshot`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+                          app.name === "Booklet Proofing" ? "object-contain" : "object-cover"
+                        }`}
                         loading="lazy"
                       />
+                      <div className="absolute inset-0 pointer-events-none z-10" style={{
+                        background: 'linear-gradient(to bottom right, rgba(64, 53, 139, 0.8), transparent, rgba(249, 183, 41, 0.5))'
+                      }}></div>
                     </div>
                     <div className="p-6">
                       <h3
