@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Static app data - can be moved to a backend API later
 const ESTIMATE_APPS = [
@@ -31,7 +32,7 @@ const ESTIMATE_APPS = [
     status: "in-process"
   },
   {
-    name: "Imposition Calculator",
+    name: "Parent Sheet Imposition Calculator",
     description: "Best-card cutting calculator for parent sheets with optimized layout planning and waste reduction.",
     href: "https://tps-printing.my.canva.site/daglaknkdpk",
     image: "/imposition-tool.jpg",
@@ -41,7 +42,7 @@ const ESTIMATE_APPS = [
 
 const GENERAL_APPS = [
   {
-    name: "Imposition Calculator",
+    name: "Parent Sheet Imposition Calculator",
     description: "Best-card cutting calculator for parent sheets with optimized layout planning and waste reduction.",
     href: "https://tps-printing.my.canva.site/daglaknkdpk",
     image: "/imposition-tool.jpg",
@@ -142,199 +143,7 @@ const ScrollLink = ({ children, to, className }) => {
   );
 };
 
-// Roadmap Accordion component for future phases
-function RoadmapAccordion() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const futurePhases = [
-    {
-      phase: "Phase 2.5: Early Testing & Connections",
-      items: [
-        "Test Roll Label Pricing Calculator (connects to the new database)",
-        "Connect Booklet Proofing System to Google Cloud (for file storage & retrieval testing)"
-      ]
-    },
-    {
-      phase: "Phase 3: Baseline Form Build",
-      items: [
-        "Build Estimate Form (baseline)",
-        "Replicate the current website form exactly as is",
-        "Same fields, flow, and output",
-        "Add ability to duplicate/clone past estimates",
-        "Add Contacts UI (within the app for customer selection/search)",
-        "Import customer names, emails, phone numbers (load into Contacts UI)"
-      ]
-    },
-    {
-      phase: "Phase 4: Data Migration & Integration",
-      items: [
-        "Import and integrate production formulas & resources",
-        "Press formulas (Ricoh, Nexpress, iJet, Trojan, Outsourced Press, Vendors)",
-        "Bindery formulas",
-        "Paper database (stocks, vendors, pricing updates via API if available)",
-        "Connect formulas and paper data into estimate form logic"
-      ]
-    },
-    {
-      phase: "Phase 5: Testing & Validation",
-      items: [
-        "Test formulas and calculations for accuracy",
-        "Run sample estimates across all presses / bindery options",
-        "Cross-check vs existing calculators (Nexpress, Roll Labels, MIS)"
-      ]
-    },
-    {
-      phase: "Phase 6: Enhancements",
-      items: [
-        "Build customer-facing interface",
-        "Accept / deny estimates",
-        "Capture digital approval signature / timestamp",
-        "Quick survey if denied",
-        "Explore vendor integrations (Spicers API, outsource vendors)",
-        "Add versioning and audit trails (track who made estimate changes)"
-      ]
-    },
-    {
-      phase: "Phase 7: Rollout & Continuous Improvement",
-      items: [
-        "Pilot with a few internal users (sales/account managers)",
-        "Refine based on feedback",
-        "Prepare training materials & documentation",
-        "Deploy full rollout to team",
-        "Ongoing support & feature requests"
-      ]
-    }
-  ];
-
-  return (
-    <div className="border border-[--brand-dark-blue] rounded-xl overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-[--brand-pale-blue] text-left flex items-center justify-between hover:bg-[--brand-dark-blue] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo]"
-      >
-        <span className="font-semibold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
-          Future Enhancement Phases (Click to expand)
-        </span>
-        <svg
-          className={`w-5 h-5 text-[--brand-indigo] transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      
-      {isOpen && (
-        <div className="bg-white">
-          {futurePhases.map((phase, index) => (
-            <div key={index} className="border-t border-[--brand-dark-blue] p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-[--brand-screened-indigo] rounded-full flex items-center justify-center">
-                  <span className="text-[--brand-indigo] font-bold text-sm">{index + 3}</span>
-                </div>
-                <h4 className="text-base font-bold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
-                  {phase.phase}
-                </h4>
-              </div>
-              <ul className="space-y-2 text-sm ml-11">
-                {phase.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-screened-indigo] rounded-full"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// TPS Logo Downloads component with actual logo files
-function TPSLogoDownloads() {
-  const logos = [
-    {
-      name: "Square Logo - Black",
-      filename: "TPS-Printing-Logo-black-transparent-1000x817.png",
-      size: "1000×817",
-      description: "Transparent background"
-    },
-    {
-      name: "Horizontal Logo - Black",
-      filename: "TPS-Printing-Logo-horizontal-black-500x194.png",
-      size: "500×194",
-      description: "White background"
-    },
-    {
-      name: "Horizontal Logo - Black",
-      filename: "TPS-Printing-Logo-horizontal-blk-1000x388.png",
-      size: "1000×388",
-      description: "White background"
-    },
-    {
-      name: "Horizontal Logo - Black",
-      filename: "TPS-Printing-Logo-horizontal-blk-2000x776.png",
-      size: "2000×776",
-      description: "White background (HD)"
-    },
-    {
-      name: "Horizontal Logo - White",
-      filename: "TPS-Printing-Logo-horizontal-wh-500x194.png",
-      size: "500×194",
-      description: "For dark backgrounds"
-    },
-    {
-      name: "Horizontal Logo - White",
-      filename: "TPS-Printing-Logo-horizontal-wh-1000x388.png",
-      size: "1000×388",
-      description: "For dark backgrounds"
-    }
-  ];
-
-  return (
-    <div className="space-y-4 rounded-xl border border-[--brand-pale-blue] bg-white p-6">
-      <h3
-        className="text-lg font-bold text-[--brand-indigo]"
-        style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-      >
-        TPS Logo Downloads
-      </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {logos.map((logo, index) => {
-          return (
-            <div key={index} className="flex flex-col items-center space-y-3 p-4 bg-[--brand-dark-blue] rounded-lg shadow-md">
-              <div className="w-full h-20 flex items-center justify-center rounded-md bg-[--brand-dark-blue]">
-                <img
-                  src={`/${logo.filename}`}
-                  alt={logo.name}
-                  className="max-w-full max-h-full object-contain rounded"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center space-y-1">
-                <div className="text-sm font-semibold text-[--brand-indigo]">{logo.name}</div>
-                <div className="text-xs text-neutral-700">{logo.size}</div>
-                <div className="text-xs text-neutral-600">{logo.description}</div>
-              </div>
-              <a
-                href={`/${logo.filename}`}
-                download={logo.filename}
-                className="text-sm font-semibold text-[--brand-indigo] underline hover:text-[--brand-orange] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--brand-indigo] rounded-md px-2 py-1 transition-colors"
-              >
-                Download PNG
-              </a>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
 
 // Main App Component
 export default function TPSAppsHub() {
@@ -385,26 +194,26 @@ export default function TPSAppsHub() {
               Production Tools
     
             </ScrollLink>
-            <ScrollLink
+            <Link
+              to="/roadmap"
               className="text-sm font-semibold text-neutral-700 hover:text-[--brand-orange] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] rounded-md px-1 py-1 transition-colors"
-              to="#estimating"
             >
               Roadmap
-            </ScrollLink>
-            <ScrollLink
+            </Link>
+            <Link
+              to="/branding"
               className="text-sm font-semibold text-neutral-700 hover:text-[--brand-orange] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] rounded-md px-1 py-1 transition-colors"
-              to="#about"
             >
-              About
-            </ScrollLink>
+              Branding
+            </Link>
           </nav>
           <div className="flex gap-2">
-            <ScrollLink
-              to="#estimating"
+            <Link
+              to="/roadmap"
               className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold shadow-sm bg-[--brand-indigo] text-white hover:bg-[--brand-gold] hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--brand-indigo] transition-colors"
             >
               Request Access
-            </ScrollLink>
+            </Link>
           </div>
         </div>
       </header>
@@ -432,7 +241,7 @@ export default function TPSAppsHub() {
               className="mt-6 text-lg text-neutral-700 max-w-3xl mx-auto"
               style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}
             >
-              Your complete toolkit for print production workflows. From equipment-specific pricing calculators and imposition tools to client proofing systems and document extraction—all unified with consistent branding and seamless integration across TPS operations.
+              Welcome! Here you’ll find tools to make your print projects easier. There are quick pricing calculators to imposition helpers, proofing systems, and more. Everything is designed to keep your jobs moving smoothly.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -600,145 +409,6 @@ export default function TPSAppsHub() {
         </div>
       </section>
 
-      {/* Estimating System */}
-      <section
-        id="estimating"
-        className="bg-white border-y border-[--brand-dark-blue]"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2
-                className="text-3xl sm:text-4xl font-extrabold text-[--brand-indigo] mb-4"
-                style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-              >
-                Updated Estimate System Roadmap
-              </h2>
-              <p
-                className="text-lg text-neutral-700 max-w-2xl mx-auto"
-                style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}
-              >
-                Building a comprehensive estimating system to streamline print workflows, quotes, and approvals.
-              </p>
-            </div>
-
-            {/* Progress Bar */}
-            <div className="mb-8 bg-[--brand-pale-gold] rounded-xl p-6">
-              <div className="space-y-4">
-                {/* Phase 1 Progress */}
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1: Discovery & Planning</span>
-                    <span className="text-sm font-semibold text-[--brand-orange]">4 of 5 tasks (80%)</span>
-                  </div>
-                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-2">
-                    <div className="bg-[--brand-orange] h-2 rounded-full transition-all duration-500" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-                
-                {/* Overall Progress */}
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Overall Project Progress</span>
-                    <span className="text-sm font-semibold text-[--brand-indigo]">Phase 1 of 7 (14%)</span>
-                  </div>
-                  <div className="w-full bg-[--brand-screened-indigo] rounded-full h-2">
-                    <div className="bg-gradient-to-r from-[--brand-gold] to-[--brand-indigo] h-2 rounded-full transition-all duration-500" style={{width: '14%'}}></div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs text-neutral-600 mt-2">Currently finishing Phase 1 - one task remaining</p>
-            </div>
-
-            {/* Phase Cards */}
-            <div className="space-y-6">
-              {/* Phase 1 - Current Active Phase */}
-              <div className="bg-white border-2 border-[--brand-orange] rounded-xl p-6 shadow-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-[--brand-orange] rounded-full flex items-center justify-center animate-pulse">
-                    <span className="text-white font-bold text-sm">1</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
-                    Phase 1: Discovery & Planning 🔄 Current Phase
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-gold] rounded-full"></span>
-                    Interview team to determine what is important ✅
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-gold] rounded-full"></span>
-                    Review current state of TPS Print MIS with Paul ✅
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-gold] rounded-full"></span>
-                    Recreate Nexpress Calculator to understand how it was built ✅
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-gold] rounded-full"></span>
-                    Review Roll Label Pricing Calculator ✅
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-orange] rounded-full"></span>
-                    Build Outsource Calculator
-                  </li>
-                </ul>
-              </div>
-
-              {/* Phase 2 - Not Started */}
-              <div className="bg-[--brand-pale-gold] border border-[--brand-dark-blue] rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-[--brand-screened-indigo] rounded-full flex items-center justify-center">
-                    <span className="text-[--brand-indigo] font-bold text-sm">2</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>
-                    Phase 2: System Setup ⏳ Not Started
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-pale-blue] rounded-full"></span>
-                    Set up Database with GoogleSQL
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-pale-blue] rounded-full"></span>
-                    Set up Storage with Google Cloud
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-pale-blue] rounded-full"></span>
-                    Set up Google Authentication (for internal users and/or customer portal)
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[--brand-pale-blue] rounded-full"></span>
-                    Set up SMTP for email notifications
-                  </li>
-                </ul>
-              </div>
-
-              {/* Future Phases Accordion */}
-              <RoadmapAccordion />
-            </div>
-
-            {/* Action Buttons */}
-            <div className="mt-12 flex flex-wrap gap-4 justify-center">
-              <ScrollLink
-                to="#estimate-tools"
-                className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold shadow-md bg-[--brand-indigo] text-white hover:bg-[--brand-gold] hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--brand-indigo] transition-colors"
-              >
-                View Current Tools
-              </ScrollLink>
-              <a
-                href="mailto:pam@tpsprinting.com?subject=TPS%20Estimating%20System%20Feedback"
-                className="inline-flex items-center rounded-xl px-6 py-3 text-base font-semibold border border-[--brand-dark-blue] text-neutral-700 hover:border-[--brand-indigo] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-indigo] transition-colors"
-              >
-                Send Feedback
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* General Apps Grid */}
       <section
         id="apps"
@@ -893,138 +563,6 @@ export default function TPSAppsHub() {
               </div>
             )
           })}
-        </div>
-      </section>
-
-
-      {/* About/Brand */}
-      <section
-        id="about"
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24"
-      >
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div>
-            <h2
-              className="text-3xl sm:text-4xl font-extrabold text-[--brand-indigo]"
-              style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-            >
-              Built for TPS Printing
-            </h2>
-            <p
-              className="mt-4 text-neutral-700"
-              style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}
-            >
-              This hub follows our brand guidance (colors, typography, and
-              contrast), favors clarity over clutter, and keeps navigation
-              obvious so our team can get to work quickly.
-            </p>
-            <div className="mt-10">
-              <TPSLogoDownloads />
-            </div>
-          </div>
-          <div className="space-y-6">
-            {/* Typography Section */}
-            <div className="rounded-2xl border border-[--brand-dark-blue] bg-white p-6 shadow-sm">
-              <h3
-                className="text-lg font-bold text-neutral-800 mb-4"
-                style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-              >
-                Typography
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-[--brand-pale-gold] rounded-lg">
-                  <div>
-                    <div className="font-bold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>Raleway</div>
-                    <div className="text-sm text-neutral-600">Headings & Titles</div>
-                  </div>
-                  <div className="text-2xl font-bold text-[--brand-indigo]" style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}>Aa</div>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-[--brand-pale-gold] rounded-lg">
-                  <div>
-                    <div className="font-bold text-[--brand-indigo]" style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}>Open Sans</div>
-                    <div className="text-sm text-neutral-600">Body Text & UI</div>
-                  </div>
-                  <div className="text-2xl font-semibold text-[--brand-indigo]" style={{ fontFamily: "Open Sans, ui-sans-serif, system-ui" }}>Aa</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Brand Colors Section */}
-            <div className="rounded-2xl border border-[--brand-dark-blue] bg-white p-4 shadow-sm">
-              <h3
-                className="text-lg font-bold text-neutral-800 mb-4"
-                style={{ fontFamily: "Raleway, ui-sans-serif, system-ui" }}
-              >
-                Brand Colors
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {[
-                {
-                  name: "Indigo / Purple",
-                  var: "--brand-indigo",
-                  hex: "#40358B",
-                  use: "Primary headers, buttons, nav.",
-                },
-                {
-                  name: "Orange",
-                  var: "--brand-orange",
-                  hex: "#F9920B",
-                  use: "CTA text, badges, emphasis.",
-                },
-                {
-                  name: "Gold",
-                  var: "--brand-gold",
-                  hex: "#F9B729",
-                  use: "Highlights, gradients, key accents.",
-                },
-                {
-                  name: "Pale Gold",
-                  var: "--brand-pale-gold",
-                  hex: "#FFF4DB",
-                  use: "Section backgrounds, cards.",
-                },
-                {
-                  name: "Pale Blue",
-                  var: "--brand-pale-blue",
-                  hex: "#C9D8FA",
-                  use: "Soft accents, pills, tags.",
-                },
-                {
-                  name: "Dark Blue",
-                  var: "--brand-dark-blue",
-                  hex: "#DDE6FA",
-                  use: "Dividers, borders, subtle fills.",
-                },
-                {
-                  name: "Screened Indigo",
-                  var: "--brand-screened-indigo",
-                  hex: "#d7d6dc",
-                  use: "Muted backgrounds and tints.",
-                },
-              ].map(({ name, var: v, hex, use }) => (
-                <div
-                  key={v}
-                  className="rounded-lg border border-[--brand-dark-blue] overflow-hidden"
-                >
-                  <div
-                    className="h-12"
-                    style={{ background: `var(${v})` }}
-                    aria-hidden
-                  />
-                  <div className="px-3 py-2 text-xs">
-                    <div className="font-semibold text-neutral-800">
-                      {name}
-                    </div>
-                    <code className="text-xs text-neutral-600 font-mono">
-                      {hex}
-                    </code>
-                    <p className="text-xs text-neutral-500">{use}</p>
-                  </div>
-                </div>
-              ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
